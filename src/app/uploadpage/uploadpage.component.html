@@ -1,0 +1,27 @@
+<app-header></app-header>
+<body>
+  <div class="welcome">
+      Hi!   {{response}} <br> <br>
+  </div>
+    <div class="upload-form">
+        <form (ngSubmit)="onSubmit()" >
+          <h2>Upload file</h2>
+          <div class="form-group">
+            <label for="file-upload">Choose the CSV file to upload:</label>
+            <input class="form-upload1" type="file" id="file-upload" (change)="onFileSelected($event)" name="file" [(ngModel)]="user.file" >
+          </div>
+          <div class="form-group">
+            <!-- <label for="mySelect">Select the Periodicity:</label> <br> -->
+            <select class="form-control"  name="selectedItem" [(ngModel)]="user.selectedItem"  >
+              <option value="">-- Select the Periodicity --</option>
+              <option  *ngFor="let item of dropdownItems" [value]="item">{{ item }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" placeholder="Enter counts" name="count" [(ngModel)]="user.count"  required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" >Upload File</button>
+        </form>
+        {{response1}}
+    </div>
+</body>

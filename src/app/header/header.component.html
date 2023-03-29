@@ -1,0 +1,46 @@
+<header>
+  
+    <img src="assets/kaartech.png" alt="Image Description">
+      <nav class="navicons">
+        <ul>
+          <a class="home" routerLink="/">Home</a>
+        <ng-container *ngIf="this.auth.isAuthenticated();then authenticated;else notAuthenticated">
+        </ng-container>
+  
+        
+        <div class="beforelogin">
+          <ng-template #notAuthenticated>
+          <a routerLink="/login">Login</a>
+          <a routerLink="/signup">Signup</a>
+        </ng-template>
+        </div >
+  
+        <div class="afterlogin">
+          <ng-template #authenticated>
+          <a routerLink="/uploadpage">upload</a>
+          <a routerLink="/outputpage">outputpage</a>
+          <a routerLink="javascript:void(0);" (click)="logout()">Logout</a>
+        </ng-template>
+        </div>
+        
+        <!-- working method 0 fg
+          <div *ngIf="!isLoggedIn" class="beforelogin">
+            <a routerLink="/login">Login</a>
+            <a routerLink="/signup">Signup</a>
+          </div >
+  
+          <div *ngIf="isLoggedIn" class="afterlogin">
+            <a routerLink="/uploadpage">upload</a>
+            <a routerLink="/outputpage">outputpage</a>
+           
+           need to write logic
+          </div>
+          <div *ngIf="isLoggedIn" class="logout" >
+            <a routerLink="javascript:void(0);" (click)="logout()">Logout</a>
+          </div>
+        -->
+        
+        </ul>
+      </nav>
+    </header>
+    
