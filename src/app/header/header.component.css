@@ -1,0 +1,38 @@
+header{
+    position: fixed;
+    display: flex;
+    color: aliceblue;
+}
+nav{
+    display: flex;
+    width: 100vw;
+
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+    justify-content: right;
+    align-items: center;
+}
+
+img{
+    padding: 1vh;
+    display: flex;
+    margin-left: 0px;
+    position:absolute;
+    width: 9vh ;
+}
+  
+.home{
+    display: inline;
+    
+}
+a{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    font-size: 20px;
+}
+.afterlogin,.beforelogin,.logout{
+    display: inline;
+    justify-content: right;
+    
+}

@@ -1,0 +1,54 @@
+/* app.component.css */
+body{
+    padding-top: 30vh;
+    justify-content: center;  
+  
+  }
+  
+  .signup-form {
+    position: relative;
+    margin-top: 20vh;
+    
+    box-sizing: border-box;
+    padding: 10px;
+    /* background-color: rgb(187, 247, 85); */
+    max-width: max-content+5vw;
+    height: max-content+10vh;
+    max-height: max-content;
+    border-radius:10px;
+    margin: auto;
+    padding-bottom: 20px;
+    width: 500px;
+  
+    }
+    
+   
+    .form-group {
+     
+      margin-bottom: 15px;
+      
+      
+    }
+    
+    .form-control{
+      max-width: 500VW;
+      text-align: center;
+      
+    }
+    
+    .btn {
+      
+      min-height: 38px;
+      border-radius: 2px;
+      
+    }
+    
+    .btn {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    
+    .btn-primary {
+      background-color: #4CAF50;
+      border-color: #c3cec4;
+    }

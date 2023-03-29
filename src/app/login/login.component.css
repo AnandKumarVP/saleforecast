@@ -1,0 +1,74 @@
+/*.login{
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: rgb(187, 247, 85);
+    max-width: 40vw;
+    height: 25vh;
+    max-height: 50vh;
+    border-radius:10px;
+    margin: auto;
+    margin-top: 15vh;
+}
+.form-group{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}*/
+
+/* app.component.css */
+body{
+    padding-top: 30vh;
+    justify-content: center;  
+  }
+  .login-form {
+      
+      position: relative;
+      margin-top: 20vh;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 10px;
+      padding-bottom: 20px;
+      /* background-color: rgb(187, 247, 85); */
+      max-width: max-content+5vw;
+      height: max-content+10vh;
+      max-height: max-content;
+      border-radius:10px;
+      margin: auto;
+  
+      width: 500px;
+  
+    }
+    
+    .form-group {
+     
+      margin-bottom: 15px;
+      
+      
+    }
+    
+    .form-control{
+      max-width: 500VW;
+      text-align: center;
+      
+    }
+    
+    .btn {
+      
+      min-height: 38px;
+      border-radius: 2px;
+      
+    }
+    
+    .btn {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    
+    .btn-primary {
+      background-color: #4CAF50;
+      border-color: #c3cec4;
+    }
+    
+    .newwww
+  {
+    color: #4CAF50;
+  }
