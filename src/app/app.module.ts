@@ -17,6 +17,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 
+// import { NgChartsModule } from 'ng2-charts';
+
 import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
  
@@ -44,7 +46,8 @@ const routes: Routes = [
     BrowserModule,FormsModule,
     AppRoutingModule,HttpClientModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule,
+    ReactiveFormsModule
+    // ,NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

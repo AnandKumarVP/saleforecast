@@ -1,6 +1,7 @@
 <app-header></app-header>
 <body>
   
+  
 
 <!-- 
     <div *ngIf="showChart">
@@ -10,11 +11,22 @@
         [styles]="{ width: '100%', height: '360px' }"
       ></canvasjs-chart>
     </div> -->
-
-
-    <p>uploadpage works!</p>
-    <button (click)="downloadFile()">Download File</button>
-    <nav>
+   
+    <div>
+      <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+  </div>      
+    
+  <br>
+    <!-- <p>uploadpage works!</p> -->
+    <button (click)="downloadFile()"> Download File</button>
+    <!-- <nav>
         <a routerLink="/download" routerLinkActive="active">Download</a>
-      </nav>
+    </nav> -->
+    <br>
+    <br>
+
+    <div>
+      <img class="images" src="./assets/my_plot.png"/>
+    </div>
+    {{response}}
 </body>
