@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-uploadpage',
@@ -15,7 +16,7 @@ export class UploadpageComponent
   response:any;
   response1:any;
   selectedFile!: File | null;
-  constructor(private auth:AuthService,private http: HttpClient) { }
+  constructor(private auth:AuthService,private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
     this.auth.canAccess();
@@ -54,6 +55,11 @@ export class UploadpageComponent
       (response:any) =>
        {
         this.response1=response.message;
+        console.log(response.message);
+        if(response.message)
+        {
+          this.router.navigate(['/outputpage']);
+        }
         alert('Upload successful!');
       },
       (error) => {

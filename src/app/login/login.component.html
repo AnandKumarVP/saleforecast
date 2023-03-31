@@ -2,31 +2,29 @@
 <body>
   <div class="login-form">
     <h2>Login</h2>
-
-        <form  class="login-form" action="" #f="ngForm" novalidate (ngSubmit)="onloginsuccess()">
+        <form  class="login-form" [formGroup]="login" (ngSubmit)="onloginsuccess()">
 
           <div>
 
-          <div class="form-group">
-            <label for="exampleInputEmail1" class="text-uppercase">Email</label>
-            <input type="email" class="form-control" placeholder="Mail id / Username" name="email" [(ngModel)]="user.email" required>
-            
-            
-          </div>
-          <div class="form-group">
-            
-            <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-            <input type="password" class="form-control" placeholder="Your Password here" name="password" [(ngModel)]="user.password" required>
-          
-          </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="text-uppercase">Email</label>
+              <input type="email" class="form-control" placeholder="Mail id / Username" name="email" [(ngModel)]="user.email" formControlName="useremail"required>
+              
+              <span style="color:red" *ngIf="useremail && useremail.invalid && useremail.touched" >Email required</span> 
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+              <input type="{{hidePassword ? 'password' : 'text'}}" class="form-control" placeholder="Your Password here" name="password" [(ngModel)]="user.password" formControlName="userpassword" required >
+              
+              <button (click)="togglePasswordVisibility()">Show/Hide Password</button>
+              <span style="color:red" *ngIf="userpassword && userpassword.invalid && userpassword.touched" >Password Required</span>
+            </div>
 
         </div>
-            <button type="submit" class="btn btn-primary btn-block" ng>Login</button>
-
-
-        
+            <button type="submit"  [disabled]="login.invalid" class="btn btn-primary btn-block" ng>Login</button>
         </form>
+
     <p>{{response}}</p>
-  </div>
-    
+  </div>    
 </body>

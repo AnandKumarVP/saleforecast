@@ -16,15 +16,43 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+
+  signup=new FormGroup({
+    userid:new FormControl('',Validators.required) && 
+           new FormControl('',Validators.minLength(5)) && 
+           new FormControl('',Validators.maxLength(15)),
+
+    useremail:new FormControl('',Validators.required) && 
+              new FormControl('bad@', Validators.email),
+
+    userpassword:new FormControl('',Validators.required) && 
+                 new FormControl('',Validators.minLength(8)) && 
+                 new FormControl('',Validators.maxLength(20))
+  })
+
+  get userid()
+  {
+    return this.signup.get('userid')
+  }
+  
+  get useremail()
+  {
+    return this.signup.get('useremail')
+  }
+
+  get userpassword()
+  {
+    return this.signup.get('userpassword')
+  }
+
+  
+
   user = {
     name:'',
     email: '',
     password: ''
   };
-  formdata = {name:"",email:"",password:""};
-  submit=false;
-  errorMessage="";
-  loading=false;
+ 
   constructor(private http: HttpClient,/*private sharedService: SharedService,*/private router: Router,private auth:AuthService) { }
   
   response:any;
@@ -35,6 +63,7 @@ export class SignupComponent {
 
   onSubmit()
   {
+    console.warn(this.signup.value)
     console.log(this.user);
     const data = {username: this.user.name, email: this.user.email, password: this.user.password};
       this.http.post('http://127.0.0.1:5000/api/register', data).subscribe(
@@ -59,5 +88,6 @@ export class SignupComponent {
         
       );
   }
+
   
 }

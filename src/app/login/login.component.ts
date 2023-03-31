@@ -24,17 +24,38 @@ import { HttpClient } from '@angular/common/http';
 
 export class LoginComponent /*implements OnInit*/
 {
-  formdata = {email:"",password:""};
-  submit=false;
-  loading=false;
-  errorMessage="";
-  response!: string;
+  
+
+  login=new FormGroup({
+    useremail:new FormControl('',Validators.required) && 
+              new FormControl('bad@', Validators.email),
+
+    userpassword:new FormControl('',Validators.required)
+  })
+  
+
+  get useremail()
+  {
+    return this.login.get('useremail')
+  }
+
+  get userpassword()
+  {
+    return this.login.get('userpassword')
+  }
+
+  password: string | undefined;
+  hidePassword = true;
+
+  togglePasswordVisibility() {
+    this.hidePassword = !this.hidePassword;
+  }
   //res2:any;
   
   constructor(private http: HttpClient,/* Working method 0 private sharedService: SharedService,*/private router: Router,private auth:AuthService) { }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-  
+ 
+  response!: any;
   log!:string;
   
   user = {
@@ -44,6 +65,7 @@ export class LoginComponent /*implements OnInit*/
   
   ngOnInit(): void {
     this.auth.canAuthenticate();
+    this
   }
 
   /*try
